@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-white shadow-md">
+    <header class="bg-blue-25 shadow-md">
+        <div class="bg-gray-800 text-white flex flex-col md:flex-row justify-between items-center px-4 py-2">
+
+            <!-- Contact Info -->
+            <div class="flex items-center space-x-4 text-sm md:text-base">
+                <span class="flex items-center space-x-1">
+                    <img src="icons/comments.png" alt="Message Icon" class="h-6 w-6">
+                    <span>1800.568.3248</span>
+                </span>
+                <span class="flex items-center space-x-1">
+                    <img src="icons/email.png" alt="Email Icon" class="h-6 w-6">
+                    <span>dummy@dummy.com</span>
+                </span>
+            </div>
+
+            <!-- Schedule Button -->
+            <button
+                class="flex items-center space-x-2 bg-red-600 hover:bg-red-800 px-4 py-2 mt-2 md:mt-0 rounded text-white text-sm md:text-base">
+                <img src="icons/schedule.png" alt="Schedule Icon" class="h-6 w-6">
+                <span>Schedule An Appointment</span>
+            </button>
+        </div>
+
+        <!-- Main Navbar -->
+        <div class="flex flex-col md:flex-row items-center justify-between px-4 py-4">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 w-full md:w-auto">
+                <img src="icons/logo.png" alt="Logo" class="h-12 w-12 rounded-full">
+                <div class="text-left">
+                    <h1 class="text-black font-semibold md:text-left">
+                        <span class="text-3xl text-blue-600 font-bold font-cursive font-bold">A</span>
+                        <span class="text-2xl font-bold">irtech</span>
+                    </h1>
+                    <p class="text-sm text-gray-500 font-bold">Heating & Air Conditioning</p>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="md:hidden ml-auto">
+                <button id="menu-button" class="text-gray-700 focus:outline-none -mt-1">
+                    <img src="icons/hamburger.png" alt="hamburger" class="h-6 w-6">
+                </button>
+            </div>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex md:space-x-4">
+                <a href="#" class="text-gray-700 hover:text-indigo-600 text-lg font-semibold">Home</a>
+                <a href="#" class="text-gray-700 hover:text-indigo-600 text-lg font-semibold">About Us</a>
+                <a href="#" class="text-gray-700 hover:text-indigo-600 text-lg font-semibold">Services</a>
+                <a href="#" class="text-gray-700 hover:text-indigo-600 text-lg font-semibold">Blog</a>
+                <a href="#" class="text-gray-700 hover:text-indigo-600 text-lg font-semibold">Contact Us</a>
+            </nav>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu"
+                class="hidden absolute top-0 right-0 h-screen w-64 bg-blue-700 text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                <nav class="flex flex-col space-y-6 p-8">
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">Home</a>
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">About Us</a>
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">Services</a>
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">Blog</a>
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">Contact Us</a>
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">Search</a>
+                </nav>
+            </div>
+
+
+            <!-- Backdrop for mobile menu -->
+            <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-0 hidden"></div>
+
+            <!-- Search Icon -->
+            <button class="hidden md:block text-gray-700 hover:text-blue-600">
+                <img src="icons/search.png" alt="Search Icon" class="h-7 w-7 m-5">
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section  -->
+    <section
+        class="bg-blue-50 p-4 md:p-8 h-screen w-full flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+        <!-- Image Section -->
+        <div class="flex-shrink-0 w-full md:w-1/2 flex justify-center -mt-8 md:-mt-16 lg:-mt-30">
+            <img src="images/HeroSectionImage-removebg-preview.png" alt="Service Truck"
+                class="w-50 md:w-full max-w-xs md:max-w-none no-animation">
+        </div>
+
+        <!-- Content Section -->
+        <div class="text-center md:text-left w-full md:w-1/2 space-y-2 md:space-y-4 p-2 md:p-10 -mt-4 md:-mt-8">
+            <h2 class="text-gray-800 font-extrabold text-lg md:text-3xl leading-tight ">THE PLUMBING EXPERTS YOU'VE
+                TRUSTED FOR OVER 85 YEARS IN COLUMBUS</h2>
+            <p class="text-red-600 text-base md:text-3xl font-bold pt-3 pb-3 sm:text-2xl">Call Us Now!</p>
+            <p class="text-indigo-900 text-3xl md:text-5xl font-extrabold pb-3">614-351-0455</p>
+
+            <!-- Button with scale animation on hover -->
+            <button
+                class="bg-indigo-900 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg mt-4 flex items-center justify-center space-x-2 hover:bg-red-800 transition duration-300 transform hover:scale-105 mx-auto md:mx-0 pt-3 sm:pt-2 md:pt-3">
+                <img src="icons/phone-call.png" alt="Phone Call Icon" class="w-5 h-5 md:w-6 md:h-6">
+                <span class="text-lg">Schedule Online</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Services -->
+
+    <div id="assignment" class="bg-indigo-900 text-white py-12 px-6 pt-20 pb-40">
+        <h2 class="text-center text-4xl font-bold mb-12">OUR SERVICES</h2>
+        <div class="relative w-full overflow-x-auto no-scrollbar  ">
+            <div class=" carousel-container flex space-x-6 w-max px-7 ">
+
+                <!-- Service Cards -->
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Our plumbers are ready to go 24/7 for emergencies</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+                        cupiditate. Corrupti, veritatis. Animi nulla itaque inventore aspernatur obcaecati sunt?</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet consectetur.</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
+                        consectetur similique !</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Our plumbers are ready to go 24/7 for emergencies - including nights,
+                        weekends, and holidays.</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum.</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet.</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+                <div
+                    class="service-card bg-white text-indigo-900 p-6 rounded-lg shadow-lg w-64 border-b-4 border-red-500 hover:scale-105 transform transition-all duration-300">
+                    <div class="icon-circle mb-4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/it-technology/70/phonenope-512.png"
+                            alt="Emergency Plumbing" class="icon mx-auto w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Plumbing Services</h3>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                    <a href="#" class="text-indigo-600 font-semibold">Explore this Service &gt;</a>
+                </div>
+
+
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button id="prev"
+                class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-indigo-600 text-white p-0 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full shadow-lg">←</button>
+            <button id="next"
+                class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-indigo-600 text-white p-0 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full shadow-lg">→</button>
+
+
+
+        </div>
+
+    </div>
+
+
+</body>
